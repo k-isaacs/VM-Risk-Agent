@@ -1,0 +1,339 @@
+
+======================================================================
+STAGE 1 — Parsing Tenable CSV
+======================================================================
+Parsed 132 unique findings from ../Tenable Results/VM-Risk-Lab.csv.
+
+======================================================================
+STAGE 2 — Pre-flight checks
+======================================================================
+Model 'claude-sonnet-4-6' is known. ✓
+
+======================================================================
+STAGE 3 — Analyst interview
+======================================================================
+About to start the interview. You'll be asked ~12 structured questions about
+the organizational context. Each has multiple-choice options plus an 'Other'
+and 'Not sure' path. Take your time — your answers drive the scoring.
+
+Press Enter to begin the interview...
+======================================================================
+VM RISK AGENT — ANALYST INTERVIEW
+======================================================================
+
+This interview captures the organizational context needed to score
+the vulnerabilities in the Tenable scan. For each question, pick the
+option that best matches, or use 'Other' / 'Not sure' if needed.
+
+
+======================================================================
+What regulatory pressure does this organization operate under?
+======================================================================
+
+  1) Heavy regulation
+     HIPAA, PCI-DSS, SOX, GDPR with significant data volume, FedRAMP, NERC. Findings can trigger audits, fines, or breach reporting requirements.
+
+  2) Moderate regulation
+     Some compliance requirements (basic GDPR, state data laws, industry standards) but not high-stakes.
+
+  3) Minimal regulation
+     Public-facing or B2B without regulated data. No significant compliance pressure.
+
+  4) Other (I'll describe my answer)
+  5) Not sure
+
+Your choice [1-5], or 's' to skip: 
+======================================================================
+How sensitive is this organization to system downtime for patching?
+======================================================================
+
+  1) 24/7 critical operations
+     Financial trading, healthcare devices, infrastructure. Patches require coordination and sometimes can't happen for weeks.
+
+  2) High uptime needs
+     Extended-hours operation. Patching windows are tight but doable with planning.
+
+  3) Standard uptime
+     Business hours operation, can patch during regular maintenance windows.
+
+  4) Other (I'll describe my answer)
+  5) Not sure
+
+Your choice [1-5], or 's' to skip: 
+======================================================================
+Has this organization had a significant security incident in the past 24 months?
+======================================================================
+
+  1) Yes, recent incident
+     Breached, compromised, or had a significant security event within the last 24 months. Leadership attention and budget are elevated.
+
+  2) No recent incidents
+     No significant security events in the last 24 months.
+
+  3) Other (I'll describe my answer)
+  4) Not sure
+
+Your choice [1-4], or 's' to skip: 
+======================================================================
+How business-critical are the assets in this scan, overall?
+======================================================================
+
+  1) High criticality
+     Production databases, customer-facing applications, core internal tools. If these go down, business stops or is seriously impaired.
+
+  2) Medium criticality
+     Supporting infrastructure, internal staff tools. If these go down, work slows but doesn't stop.
+
+  3) Low criticality
+     Development/test environments, peripheral systems. Annoying if down, but no significant business impact.
+
+  4) Other (I'll describe my answer)
+  5) Not sure
+
+Your choice [1-5], or 's' to skip: 
+======================================================================
+What is the sensitivity of data stored on or accessible from these assets?
+======================================================================
+
+  1) Regulated / Sensitive
+     Patient records (HIPAA), payment card data (PCI-DSS), customer PII subject to GDPR/CCPA, financial records subject to SOX, trade secrets, classified data.
+
+  2) Internal
+     Internal business data, employee info, non-public documents. Embarrassing if exposed but not regulated.
+
+  3) Public / Minimal
+     Public-facing content, test data, nothing sensitive.
+
+  4) Other (I'll describe my answer)
+  5) Not sure
+
+Your choice [1-5], or 's' to skip: 
+======================================================================
+Where do these assets sit in the network?
+======================================================================
+
+  1) Internet-facing
+     Reachable from the public internet. Anyone in the world can attempt to connect.
+
+  2) DMZ / Semi-exposed
+     Sits in a DMZ or partially exposed segment. Reachable from internet through controls.
+
+  3) Internal only
+     Only reachable from inside the corporate network. An attacker needs an existing foothold to touch these.
+
+  4) Other (I'll describe my answer)
+  5) Not sure
+
+Your choice [1-5], or 's' to skip: 
+======================================================================
+How mature is this organization's patching program?
+======================================================================
+
+  1) Strong
+     Patches deployed within days of vendor release; automated tooling; defined cadence.
+
+  2) Medium
+     Monthly patch cycles, mostly on time, some lag, manual tracking.
+
+  3) Weak
+     Ad-hoc patching, reactive, no defined schedule.
+
+  4) Other (I'll describe my answer)
+  5) Not sure
+
+Your choice [1-5], or 's' to skip: 
+----------------------------------------------------------------------
+You picked: Weak
+Which of these apply to your organization? (enter numbers separated by commas, or press Enter for none)
+----------------------------------------------------------------------
+  1) Patching happens reactively when problems arise
+  2) No defined patching schedule
+  3) Vulnerability scans rarely or never run
+  4) Significant backlog of unpatched systems
+
+Applicable items: 
+======================================================================
+How mature is this organization's network segmentation and access control (Zero Trust)?
+======================================================================
+
+  1) Strong
+     Segmented network, MFA everywhere, least-privilege access enforced.
+
+  2) Medium
+     Some segmentation, MFA on critical systems only, mixed access controls.
+
+  3) Weak
+     Flat network, broad access, password-only authentication.
+
+  4) Other (I'll describe my answer)
+  5) Not sure
+
+Your choice [1-5], or 's' to skip: 
+----------------------------------------------------------------------
+You picked: Weak
+Which of these apply to your organization? (enter numbers separated by commas, or press Enter for none)
+----------------------------------------------------------------------
+  1) Flat network with no significant segmentation
+  2) Password-only authentication
+  3) Broad access permissions (most users have admin or near-admin)
+  4) No formal access review process
+
+Applicable items: 
+======================================================================
+How mature is this organization's detection and response capability?
+======================================================================
+
+  1) Strong
+     EDR deployed, SOC or 24/7 monitoring, documented IR playbooks, recent drills.
+
+  2) Medium
+     Basic logging, alerts route to someone, response is reactive.
+
+  3) Weak
+     Limited monitoring, would likely find out from external sources.
+
+  4) Other (I'll describe my answer)
+  5) Not sure
+
+Your choice [1-5], or 's' to skip: 
+----------------------------------------------------------------------
+You picked: Weak
+Which of these apply to your organization? (enter numbers separated by commas, or press Enter for none)
+----------------------------------------------------------------------
+  1) Limited or no centralized monitoring
+  2) No formal IR plan
+  3) Would likely find out about incidents from external sources
+  4) Minimal endpoint protection
+
+Applicable items: 
+======================================================================
+How mature is this organization's resilience (backups, recovery, continuity)?
+======================================================================
+
+  1) Strong
+     Tested backups, written IR plan, business continuity drills.
+
+  2) Medium
+     Backups exist, IR plan written but not tested.
+
+  3) Weak
+     No real backup strategy, no IR plan.
+
+  4) Other (I'll describe my answer)
+  5) Not sure
+
+Your choice [1-5], or 's' to skip: 
+----------------------------------------------------------------------
+You picked: Medium
+Which of these apply to your organization? (enter numbers separated by commas, or press Enter for none)
+----------------------------------------------------------------------
+  1) Backups taken regularly but rarely tested
+  2) IR plan written but not drilled
+  3) Some redundancy but not comprehensive
+
+Applicable items: 
+======================================================================
+Are any assets in this scan out of scope (test environments, decommissioned, not your responsibility)?
+======================================================================
+
+  1) No, all assets in scope
+     All assets in this scan are owned and relevant.
+
+  2) Yes, some assets are out of scope
+     You'll specify which in a follow-up.
+
+  3) Other (I'll describe my answer)
+  4) Not sure
+
+Your choice [1-4], or 's' to skip: 
+======================================================================
+Are any of these findings already mitigated with compensating controls?
+======================================================================
+
+  1) No, none are mitigated yet
+     All findings are still actionable as listed.
+
+  2) Yes, some findings have compensating controls
+     You'll specify which in a follow-up.
+
+  3) Other (I'll describe my answer)
+  4) Not sure
+
+Your choice [1-4], or 's' to skip: 
+======================================================================
+INTERVIEW COMPLETE
+======================================================================
+
+Summary of captured answers:
+
+  [regulatory_pressure] picked 'heavy' | value=1.25 | confidence=1.0
+  [uptime_sensitivity] picked 'standard' | value=1.0 | confidence=1.0
+  [incident_history] picked 'no_recent_incident' | value=1.0 | confidence=1.0
+  [asset_criticality] picked 'medium' | value=0.6 | confidence=1.0
+  [data_sensitivity] picked 'regulated' | value=1.0 | confidence=1.0
+  [exposure] picked 'internal' | value=1.0 | confidence=1.0
+  [patching_maturity] picked 'weak' (0 sub-items checked) | value=0.0 | confidence=1.0
+  [segmentation_zerotrust] picked 'weak' (0 sub-items checked) | value=0.0 | confidence=1.0
+  [detection_response] picked 'weak' (0 sub-items checked) | value=0.0 | confidence=1.0
+  [resilience] picked 'medium' (2 sub-items checked) | value=0.05 | confidence=1.0
+  [out_of_scope_assets] picked 'none' | value=None | confidence=1.0
+  [already_mitigated] picked 'none' | value=None | confidence=1.0
+
+
+======================================================================
+STAGE 4 — Post-interview guardrails
+======================================================================
+Context completeness: 12/12 answered (ratio 1.00). ✓
+Interview confidence: high (avg 1.00).
+
+======================================================================
+STAGE 5 — Scoring findings
+======================================================================
+Scoring 132 findings. LLM rationales will run after the math.
+
+Generating rationales for 27 findings...
+  [1/27] 167637 — generating rationale...
+  [2/27] 168657 — generating rationale...
+  [3/27] 174075 — generating rationale...
+  [4/27] 176743 — generating rationale...
+  [5/27] 179144 — generating rationale...
+  [6/27] 166555 — generating rationale...
+  [7/27] 181352 — generating rationale...
+  [8/27] 171456 — generating rationale...
+  [9/27] 163662 — generating rationale...
+  [10/27] 164348 — generating rationale...
+  [11/27] 165259 — generating rationale...
+  [12/27] 166210 — generating rationale...
+  [13/27] 170102 — generating rationale...
+  [14/27] 172513 — generating rationale...
+  [15/27] 175332 — generating rationale...
+  [16/27] 177929 — generating rationale...
+  [17/27] 180234 — generating rationale...
+  [18/27] 209231 — generating rationale...
+  [19/27] 314357 — generating rationale...
+  [20/27] 298646 — generating rationale...
+  [21/27] 306740 — generating rationale...
+  [22/27] 193266 — generating rationale...
+  [23/27] 180360 — generating rationale...
+  [24/27] 211725 — generating rationale...
+  [25/27] 250276 — generating rationale...
+  [26/27] 214542 — generating rationale...
+  [27/27] 242639 — generating rationale...
+
+Scored: 27
+Culled: 105
+By bucket: {'critical': 24, 'high': 3, 'medium': 0, 'low': 0, 'filtered': 0}
+
+======================================================================
+STAGE 6 — Writing report
+======================================================================
+Report written: ../report_clinic.md
+Size: 53376 chars
+
+======================================================================
+DONE
+======================================================================
+
+  Open the report: open ../report_clinic.md
+  Or view in terminal: cat ../report_clinic.md | less
+
