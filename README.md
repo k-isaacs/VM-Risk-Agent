@@ -41,13 +41,13 @@ The pipeline runs in six stages. A Tenable CSV is parsed into structured finding
 
 ```mermaid
 flowchart LR
-    A[Tenable CSV] --> B[csv_parser]
-    B --> C[guardrails]
-    C --> D[interview]
-    D --> E[guardrails]
-    E --> F[rubric<br/>math + LLM rationale]
-    F --> G[report_generator]
-    G --> H[Markdown report]
+    A[Tenable CSV] --> B[CSV_Parser]
+    B --> C[Guardrails]
+    C --> D[Interview]
+    D --> E[Guardrails]
+    E --> F[Rubric<br/>Math + LLM Rationale]
+    F --> G[Report_Generator]
+    G --> H[Markdown Report]
 ```
 
 ---
@@ -79,7 +79,7 @@ final_score      = adjusted_score × org_context_modifier
 
 </details>
 
-📄 **Full design report:** [`VM_Risk_Agent_Rubric_Design.pdf`](Docs/VM_Risk_Agent_Rubric_Design.pdf) — source tracing to Magnusson and Howard, design deviations with reasoning, and the full calibration story.
+📄 **Full design report:** [`VM_Risk_Agent_Rubric_Design.pdf`](Docs/VM_Risk_Agent_Rubric_Design.pdf) 
 
 ---
 
@@ -148,7 +148,7 @@ The table below shows how Tenable originally classified the 30 non-informational
 </details>
 
 <details>
-<summary><strong>🏪 Mom-and-Pop (Tax/bookkeeping shop) — Regulated data, weak defenses, unknown exposure</strong></summary>
+<summary><strong>🏪 Mom-and-Pop (Tax/Bookkeeping Shop) — Regulated data, weak defenses, unknown exposure</strong></summary>
 
 **Org context:** A small family-run tax and bookkeeping business. The interview was completed by someone without full visibility into the technical setup, exercising the agent's free-form override and "unsure" answer paths. Regulated client data, weak defenses across the board, exposure interpreted conservatively from the analyst's description.
 
