@@ -95,7 +95,7 @@ The table below shows how Tenable originally classified the 30 non-informational
 | 🏥 Hospital | 5 | 22 | 0 | 0 | 27 |
 | ☁️ SaaS Startup | 0 | 0 | 27 | 0 | 27 |
 | 🩺 Small Clinic | 24 | 3 | 0 | 0 | 27 |
-| 🏪 Mom-and-Pop (Tax/bookkeeping shop) | 26 | 1 | 0 | 0 | 27 |
+| 🏪 Mom-and-Pop (Tax/Bookkeeping Shop) | 26 | 1 | 0 | 0 | 27 |
 
 > **Note:** Each scenario's dropdown below highlights three findings: the highest-scoring overall plus two more chosen to show how exploit availability and CVSS interact with org context. The highest-scoring entry across every scenario is one of 16 Mozilla Firefox ESR plugins from consecutive versions of the same product. The dropdowns show the highest-scoring plugin as the cluster's representative; the linked report shows all 16.
 
