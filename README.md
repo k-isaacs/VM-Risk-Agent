@@ -8,6 +8,12 @@
   <em>Two organizations can get the same vulnerability scan but shouldn't get the same remediation plan. This agent reads the scan, asks about the organization, and ranks what to fix first.</em>
 </p>
 
+<div align="center">
+
+`Python 3.10+` · `Anthropic API` · `Tenable Nessus` · `Azure`
+
+</div>
+
 ---
 
 ## Overview
